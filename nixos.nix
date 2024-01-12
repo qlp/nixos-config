@@ -30,7 +30,7 @@ nixpkgs.lib.nixosSystem rec {
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
-        users.cor = {
+        users.jurriaan = {
           # Home-manager level modules
           imports = [
             ./home-modules/awesome.nix

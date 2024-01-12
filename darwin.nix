@@ -3,7 +3,7 @@
 name: { inputs, nixpkgs, home-manager, system, user, darwin }:
 
 darwin.lib.darwinSystem {
-  system = "aarch64-darwin";
+  system = "x86_64-darwin";
 
   # nix-darwin level modules
   modules = [
@@ -14,14 +14,14 @@ darwin.lib.darwinSystem {
     # The home-manager nix-darwin module
     home-manager.darwinModules.home-manager
     {
-      users.users.cor = {
-        name = "cor";
-        home = "/Users/cor";
+      users.users.jurriaan = {
+        name = "jurriaan";
+        home = "/Users/jurriaan";
       };
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
-        users.cor = {
+        users.jurriaan = {
           # Home-manager level modules
           imports = [
             ./home-modules/darwin.nix

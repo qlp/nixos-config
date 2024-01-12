@@ -112,8 +112,8 @@ repeatratemenu = {
 }
 
 thememenu = {
-    { "light", "nix run /home/cor/nixos-config\\#set-theme light" },
-    { "dark", "nix run /home/cor/nixos-config\\#set-theme dark" },
+    { "light", "nix run /home/jurriaan/nixos-config\\#set-theme light" },
+    { "dark", "nix run /home/jurriaan/nixos-config\\#set-theme dark" },
 }
 
 
@@ -288,7 +288,7 @@ awful.screen.connect_for_each_screen(function(s)
             -- filters out the first one in the document
             -- and shows it without the - [ ]
             wibox.container.margin(awful.widget.watch([[
-                bash -c "cat `ls -d /home/cor/omega/Journal/*.* | tac | head -n 1` | grep --color=never -e '- \\[ \\]' | head -n 1 | cut -c 7-"
+                bash -c "cat `ls -d /home/jurriaan/omega/Journal/*.* | tac | head -n 1` | grep --color=never -e '- \\[ \\]' | head -n 1 | cut -c 7-"
             ]], 10), 12, 12, 6, 6),
             wibox.container.margin(wibox.widget.systray(), 12, 12, 6, 6),
             wibox.container.margin(mytextclock, 12, 24, 6, 6),

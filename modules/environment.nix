@@ -23,7 +23,7 @@
         docker rmi -f $(docker images -a -q)    
         docker volume prune -f
       '')
-    ] ++ lib.optionals (currentSystemName == "vm-aarch64") [
+    ] ++ lib.optionals (currentSystemName == "vm-x86_64") [
       # This is needed for the vmware user tools clipboard to work.
       # You can test if you don't need this by deleting this and seeing
       # if the clipboard sill works.

@@ -1,5 +1,5 @@
 {
-  description = "NixOS systems and tools by cor";
+  description = "NixOS systems and tools by jurriaan";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-23.11";
@@ -26,11 +26,11 @@
     let
       mkNixos = import ./nixos.nix;
       mkDarwin = import ./darwin.nix;
-      user = "cor";
+      user = "jurriaan";
     in
     rec
     {
-      packages.aarch64-linux = let pkgs = import nixpkgs { system = "aarch64-linux"; }; in {
+      packages.x86_64-linux = let pkgs = import nixpkgs { system = "x86_64-linux"; }; in {
 
         set-theme = pkgs.writeShellApplication {
           name = "switch-theme";
@@ -42,15 +42,15 @@
             fi
     
             echo "$1"
-            cd /home/cor/nixos-config
+            cd /home/jurriaan/nixos-config
             printf '%s' "$1" > THEME.txt
-            sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake ".#vm-aarch64-parallels"
+            sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake ".#vm-x86_64-parallels"
           '';
         };
         current-task = pkgs.writeShellApplication {
           name = "current-task";
           text = ''
-             NEWEST_ENTRY=$(find /home/cor/omega/Journal/*.* | tac | head -n 1)
+             NEWEST_ENTRY=$(find /home/jurriaan/omega/Journal/*.* | tac | head -n 1)
             	CURRENT_TASK=$(grep --color=never -e '- \[ \]' < "$NEWEST_ENTRY" | head -n 1 | awk '{$1=$1};1' | cut -c 7-)
                echo "$CURRENT_TASK"
           '';
@@ -66,19 +66,19 @@
       };
 
 
-      nixosConfigurations = let system = "aarch64-linux"; in {
-        vm-aarch64-parallels = mkNixos "vm-aarch64-parallels" {
+      nixosConfigurations = let system = "x86_64-linux"; in {
+        vm-x86_64-parallels = mkNixos "vm-x86_64-parallels" {
           inherit user inputs home-manager system;
           nixpkgs = inputs.nixpkgs-parallels;
-          custom-packages = packages.aarch64-linux;
+          custom-packages = packages.x86_64-linux;
         };
 
-        vm-aarch64-utm = mkNixos "vm-aarch64-utm" {
+        vm-x86_64-utm = mkNixos "vm-x86_64-utm" {
           inherit user inputs nixpkgs home-manager system;
-          custom-packages = packages.aarch64-linux;
+          custom-packages = packages.x86_64-linux;
         };
 
-        vm-aarch64-vmware = mkNixos "vm-aarch64-vmware" {
+        vm-x86_64-vmware = mkNixos "vm-x86_64-vmware" {
           inherit user inputs nixpkgs home-manager system;
         };
         vm-orb = nixpkgs.lib.nixosSystem {
@@ -94,7 +94,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.cor = {
+                users.jurriaan = {
                   # Home-manager level modules
                   imports = [
                     { home.stateVersion = "23.05"; }
@@ -131,8 +131,8 @@
         };
       };
 
-      darwinConfigurations = let system = "aarch64-darwin"; in {
-        default = mkDarwin "vm-aarch64-vmware" {
+      darwinConfigurations = let system = "x86_64-darwin"; in {
+        default = mkDarwin "vm-x86_64-vmware" {
           inherit user inputs nixpkgs home-manager system darwin;
         };
       };

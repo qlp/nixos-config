@@ -25,7 +25,7 @@
   };
 
 
-  networking = let name = "CorBook"; in {
+  networking = let name = "JurriaanBook"; in {
     computerName = name;
     hostName = name;
     localHostName = name;

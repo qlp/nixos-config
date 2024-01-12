@@ -8,7 +8,7 @@
     package = pkgs-unstable.flameshot;
     settings = {
       General = {
-        savePath = "/home/cor/Screenshots";
+        savePath = "/home/jurriaan/Screenshots";
         showStartupLaunchMessage = false;
         disabledTrayIcon = true;
         filenamePattern = "%F-%H%M%S";

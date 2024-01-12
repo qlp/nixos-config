@@ -5,13 +5,13 @@
   ];
 
   # Disable the default module and import our override. We have
-  # customizations to make this work on aarch64.
+  # customizations to make this work on x86_64.
   disabledModules = [ "virtualisation/vmware-guest.nix" ];
 
   # Interface is this on M1
   networking.interfaces.ens160.useDHCP = true;
 
-  # Lots of stuff that uses aarch64 that claims doesn't work, but actually works.
+  # Lots of stuff that uses x86_64 that claims doesn't work, but actually works.
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
 
