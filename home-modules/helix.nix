@@ -2,7 +2,7 @@
 {
   programs.helix = {
     enable = true;
-    package = if isDarwin then pkgs.helix else inputs.helix.packages.${pkgs.system}.default;
+    package = pkgs.helix; #if isDarwin then pkgs.helix else inputs.helix.packages.${pkgs.system}.default;
 
     settings = {
       theme = if theme == "dark" then "catppuccin_frappe" else "rose_pine_dawn";
