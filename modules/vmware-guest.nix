@@ -1,5 +1,5 @@
 # This is based on the official vmware-guest module, but modified
-# for aarch64 to disable certain features and add support. I'm unsure
+# for x86_64 to disable certain features and add support. I'm unsure
 # how to upstream this because I just don't use certain features... maybe
 # making them toggle-able? I'm not sure.
 
@@ -28,7 +28,7 @@ in
 
   config = mkIf cfg.enable {
     assertions = [{
-      assertion = pkgs.stdenv.isi686 || pkgs.stdenv.isx86_64 || pkgs.stdenv.isAarch64;
+      assertion = pkgs.stdenv.isi686 || pkgs.stdenv.isx86_64 || pkgs.stdenv.isx86_64;
       message = "VMWare guest is not currently supported on ${pkgs.stdenv.hostPlatform.system}";
     }];
 

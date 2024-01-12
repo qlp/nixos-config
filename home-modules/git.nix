@@ -6,12 +6,12 @@
     in
     {
       enable = true;
-      userName = "cor";
-      userEmail = "cor@pruijs.dev";
+      userName = "jurriaan";
+      userEmail = "jurriaan@pruijs.nl";
       lfs.enable = true;
       extraConfig = {
         color.ui = true;
-        github.user = "cor";
+        github.user = "jurriaan";
         gpg.format = "ssh";
         init.defaultBranch = "main";
 

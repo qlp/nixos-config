@@ -2,12 +2,12 @@
 {
   users = {
     mutableUsers = false;
-    users.cor = {
+    users.jurriaan = {
       isNormalUser = true;
-      home = "/home/cor";
+      home = "/home/jurriaan";
       extraGroups = [ "docker" "wheel" ];
       shell = pkgs-unstable.zsh;
-      hashedPassword = "$6$sb3eB/EbsWnfAqzy$szu0h/hbX9/23n5RKE0dwzV8lmq.1Yj2NzI/jYQxJZIbzmY8dpIYRdhUVZgCMnR0CeqrQfgzs6FtPoGUiCqDR0";
+      hashedPassword = "$6$PdTmjDW.DtXp.7Xr$AD9ybp6.Qsnl0b/0MVlnOo7zOiM0Lqh6kZYjh3dGF2AbqlGU0zPyislJvtjxRGVurXqE88hNAnBDW.cc7ySf30";
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAN0JRbnTsz4eEUeL6My/ew+rX3Qojawn+Y1B3buPuyC"
       ];

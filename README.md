@@ -27,7 +27,7 @@ These fucntions are used in `./flake.nix`'s `nixosConfigurations` and `darwinCon
 
 _NOTE: These instructions are out of date_
 
-1. Do a project-wide search of my username, `cor` and replace it with `your_username`. Be careful not to replace things that are not my username, such as "core".
+1. Do a project-wide search of my username, `jurriaan` and replace it with `your_username`. Be careful not to replace things that are not my username, such as "jurriaane".
 2. In `./nixos.nix`, replace the value of `hashedPassword` with one you've generated with `mkpasswd -m sha-512` [See here for more info](https://search.nixos.org/options?channel=22.05&show=users.users.%3Cname%3E.hashedPassword&from=0&size=50&sort=relevance&type=packages&query=users.users.%3Cname%3E.hash).
 3. In `./programs/git.nix`, change `userName` and `extraConfig.github.user` to your GitHub username. Also change `signing.key` to the public GPG key you use for your GitHub account.
 
@@ -39,7 +39,7 @@ _NOTE: These instructions are out of date_
 
 1. Do a clean install macOS, deny analytics.
 2. Install `Nix` on macOS with [the installer](https://nixos.org/download.html#nix-install-macos)
-3. In ~, execute `nix-shell -p git --command "git clone https://github.com/cor/nixos-config"`
+3. In ~, execute `nix-shell -p git --command "git clone https://github.com/jurriaan/nixos-config"`
 4. Install `nix-darwin` with [the nix-darwin installer](https://github.com/LnL7/nix-darwin).
 5. Restart **Terminal.app**
 6. `sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.original`
@@ -57,7 +57,7 @@ _NOTE: These instructions are out of date_
 1. Install UTM from the Mac App Store
 2. Download a minimal 64-bit ARM ISO [from the NixOS download page](https://nixos.org/download.html).
 3. Open UTM, Create a new Linux VM, Use Apple Virutalization & Enable Rosetta
-4. Select your `nixos-minimal-...-aarch64-linux.iso`
+4. Select your `nixos-minimal-...-x86_64-linux.iso`
 5. Hardware:
   - CPU: 8 cores
   - RAM: 22528 MB
@@ -72,7 +72,7 @@ _NOTE: These instructions are out of date_
 1. Install [Parallels Desktop](parallels.com).
 2. Download a minimal 64-bit ARM ISO [from the NixOS download page](https://nixos.org/download.html).
 3. In parallels: click "Install Windows or another OS from a DVD or image file"
-4. Select your `nixos-minimal-...-aarch64-linux.iso`
+4. Select your `nixos-minimal-...-x86_64-linux.iso`
 5. Select "Other Linux"
 6. In Name, type "NixOS"
 7. Click "Customize settings before installation"
@@ -99,7 +99,7 @@ _NOTE: These instructions are out of date_
 16. On your Mac, in the same shell, type `make vm/secrets`. 
 17. Reboot your VM by typing `reboot`.
 18. Log into your VM
-19. In `~`, run `git clone git@github.com:cor/nixos-config`
+19. In `~`, run `git clone git@github.com:jurriaan/nixos-config`
 20. Enter your SSH password (stored in 1Password)
 21. Run `cd nixos-config && make switch`
 22. `reboot`
