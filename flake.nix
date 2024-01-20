@@ -5,6 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/release-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-parallels.url = "github:nixos/nixpkgs?rev=b80cef7eb8a9bc5b4f94172ebf4749c8ee3d770c"; # pinned version of 23.05 because parallels can't handle the newer kernel
+    nixpkgs-clion.url = "github:nixos/nixpkgs/release-23.11";
     flake-utils.url = "github:numtide/flake-utils";
 
     ghostty.url = "git+ssh://git@github.com/mitchellh/ghostty";
@@ -123,6 +124,7 @@
                 currentSystemName = "vm-orb";
                 currentSystem = system;
                 isDarwin = system == "aarch64-darwin";
+                pkgs-clion = import inputs.nixpkgs-clion { inherit system; config.allowUnfree = true; };
                 pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; config.allowUnfree = true; };
                 ghostty = ghostty.packages.${system}.default;
               };
