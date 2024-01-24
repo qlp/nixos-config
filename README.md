@@ -1,5 +1,6 @@
 # nixos-config
 
+
 My [NixOS](https://nixos.org), [nix-darwin](http://daiderd.com/nix-darwin/) and [Home Manager](https://github.com/nix-community/home-manager) configurations.
 
 ## Structure
