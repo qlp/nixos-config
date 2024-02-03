@@ -96,7 +96,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.jurriaan = { ... }: {
+                users.jurriaan = {
                   # Home-manager level modules
                   imports = [
                     { home.stateVersion = "23.05"; }
