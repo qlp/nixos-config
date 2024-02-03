@@ -28,10 +28,7 @@
       # You can test if you don't need this by deleting this and seeing
       # if the clipboard sill works.
       gtkmm3
-    ] ++ (with pkgs-clion; [
-      jetbrains.clion
-      jetbrains.jdk
-    ]);
+    ];
 
     variables = {
       PS1 = "%m %d $ ";

@@ -292,16 +292,16 @@
     },
     "nixpkgs-clion": {
       "locked": {
-        "lastModified": 1705781397,
-        "narHash": "sha256-pOlDs1paCIAhr84QjFG72iv4iBsr0pIQyItxRHJhevE=",
+        "lastModified": 1705697961,
+        "narHash": "sha256-XepT3WS516evSFYkme3GrcI3+7uwXHqtHbip+t24J7E=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c5b6c179f7b7adce1ee234df23e5cb9f1a78f87b",
+        "rev": "e5d1c87f5813afde2dda384ac807c57a105721cc",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "release-23.11",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }

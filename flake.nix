@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/release-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-parallels.url = "github:nixos/nixpkgs?rev=b80cef7eb8a9bc5b4f94172ebf4749c8ee3d770c"; # pinned version of 23.05 because parallels can't handle the newer kernel
-    nixpkgs-clion.url = "github:nixos/nixpkgs/release-23.11";
+    nixpkgs-clion.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
 
     ghostty.url = "git+ssh://git@github.com/mitchellh/ghostty";
@@ -95,7 +95,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.jurriaan = {
+                users.jurriaan = { ... }: {
                   # Home-manager level modules
                   imports = [
                     { home.stateVersion = "23.05"; }
@@ -108,11 +108,13 @@
                     ./home-modules/helix.nix
                     ./home-modules/yazi.nix
                     ./home-modules/nushell/nushell.nix
+                    ./home-modules/jetbrains.nix
                   ];
                 };
 
                 extraSpecialArgs = {
                   theme = builtins.readFile ./THEME.txt; # "dark" or "light"
+                  pkgs-clion = import inputs.nixpkgs-clion { inherit system; config.allowUnfree = true; };
                   pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; config.allowUnfree = true; };
                   isDarwin = false;
                   inherit inputs;
