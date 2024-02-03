@@ -1,1 +1,1 @@
-nix shell nixpkgs#patchelf -c patchelf --set-interpreter $(nix eval --raw nixpkgs#glibc)/lib64/ld-linux-x86-64.so.2 /home/jurriaan/.local/share/JetBrains/CLion2023.2/intellij-rust/bin/linux/x86-64/intellij-rust-native-helper
+nix shell nixpkgs#patchelf -c patchelf --set-interpreter $(nix eval --raw nixpkgs#glibc)/lib64/ld-linux-x86-64.so.2 /home/jurriaan/.config/JetBrains/RemoteDev-CL/_home_jurriaan_union/plugins/intellij-rust/bin/linux/x86-64/intellij-rust-native-helper
