@@ -34,7 +34,6 @@ darwin.lib.darwinSystem {
             ./home-modules/lazygit.nix
             ./home-modules/wezterm.nix
             ./home-modules/zellij.nix
-            ./home-modules/ghostty.nix
             ./home-modules/yazi.nix
             ./home-modules/jetbrains.nix
           ];

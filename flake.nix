@@ -8,7 +8,6 @@
     nixpkgs-clion.url = "github:qlp/nixpkgs?rev=d8381b3a49fb8fe41b539442918e1ce5433a9b9d"; # patch for remote dev server
     flake-utils.url = "github:numtide/flake-utils";
 
-    ghostty.url = "git+ssh://git@github.com/mitchellh/ghostty";
     helix.url = "github:helix-editor/helix";
     yazi.url = "github:sxyazi/yazi";
 
@@ -23,7 +22,7 @@
     };
   };
 
-  outputs = { self, ghostty, darwin, nixpkgs, nixpkgs-unstable, home-manager, flake-utils, ... }@inputs:
+  outputs = { self, darwin, nixpkgs, nixpkgs-unstable, home-manager, flake-utils, ... }@inputs:
     let
       mkNixos = import ./nixos.nix;
       mkDarwin = import ./darwin.nix;
@@ -127,7 +126,6 @@
                 isDarwin = system == "aarch64-darwin";
                 pkgs-clion = import inputs.nixpkgs-clion { inherit system; config.allowUnfree = true; };
                 pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; config.allowUnfree = true; };
-                ghostty = ghostty.packages.${system}.default;
               };
             }
           ];
