@@ -24,6 +24,7 @@
         gpg.format = "ssh";
       } else {
         user.signingkey = sshSigningKey;
+        commit.gpgsign = true;
         signing = {
           signByDefault = true;
           key = sshSigningKey;
