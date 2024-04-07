@@ -35,7 +35,7 @@ darwin.lib.darwinSystem {
             ./home-modules/wezterm.nix
             ./home-modules/zellij.nix
             ./home-modules/yazi.nix
-            ./home-modules/jetbrains.nix
+            # ./home-modules/jetbrains.nix
           ];
         };
         # Arguments that are exposed to every `home-module`.

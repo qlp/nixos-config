@@ -89,7 +89,7 @@
             ./modules/zsh.nix
             ./modules/nix.nix
             ./modules/environment.nix
-            ./modules/jetbrains.nix
+            # ./modules/jetbrains.nix
             home-manager.nixosModules.home-manager
             {
               home-manager = {
