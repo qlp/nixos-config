@@ -123,7 +123,7 @@
               config._module.args = {
                 currentSystemName = "vm-orb";
                 currentSystem = system;
-                isDarwin = system == "aarch64-darwin";
+                isDarwin = system == "x86_64-darwin";
                 pkgs-clion = import inputs.nixpkgs-clion { inherit system; config.allowUnfree = true; };
                 pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; config.allowUnfree = true; };
               };
