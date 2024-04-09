@@ -51,7 +51,7 @@ nixpkgs.lib.nixosSystem rec {
             ./home-modules/rofi.nix
             ./home-modules/tmux.nix
             ./home-modules/zsh.nix
-            ./home-modules/wezterm.nix
+            # ./home-modules/wezterm.nix
             ./home-modules/zellij.nix
             # ./home-modules/jetbrains.nix
           ];
