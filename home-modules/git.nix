@@ -6,6 +6,7 @@
     in
     {
       enable = true;
+      delta.enable = true;
       userName = "jurriaan";
       userEmail = "jurriaan@pruijs.nl";
       lfs.enable = true;
