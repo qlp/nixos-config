@@ -16,11 +16,18 @@
       };
     };
     keymap = {
-      manager.prepend_keymap = [{
-        on = [ "l" ];
-        run = "plugin --sync smart-enter";
-        desc = "Enter the child directory, or open the file";
-      }];
+      manager.prepend_keymap = [
+        {
+          on = [ "l" ];
+          run = "plugin --sync smart-enter";
+          desc = "Enter the child directory, or open the file";
+        }
+        {
+          on = [ "L" ];
+          run = "plugin --sync smarter-enter";
+          desc = "Open the file or directory";
+        }
+      ];
     };
   };
 
