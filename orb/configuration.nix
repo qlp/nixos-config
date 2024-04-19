@@ -78,11 +78,7 @@ with lib;
     bottom
     neofetch
     libxml2
-    <<<<<<< HEAD
-  ];
-  =======
-  ] ++ [ ghostty to-case ];
-  >>>>>>> ed15014 (feat(helix): add to_case helper binary to path)
+  ] ++ [ to-case ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
