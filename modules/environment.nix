@@ -1,4 +1,4 @@
-{ pkgs, pkgs-clion, lib, currentSystemName, ... }:
+{ inputs, pkgs, pkgs-clion, lib, currentSystemName, ... }:
 {
   environment = {
     systemPackages = with pkgs; [

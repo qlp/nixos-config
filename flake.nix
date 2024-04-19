@@ -7,6 +7,7 @@
     nixpkgs-parallels.url = "github:nixos/nixpkgs?rev=b80cef7eb8a9bc5b4f94172ebf4749c8ee3d770c"; # pinned version of 23.05 because parallels can't handle the newer kernel
     nixpkgs-clion.url = "github:qlp/nixpkgs?rev=d8381b3a49fb8fe41b539442918e1ce5433a9b9d"; # patch for remote dev server
     flake-utils.url = "github:numtide/flake-utils";
+    to-case.url = "github:cor/ToCase";
 
     helix.url = "github:helix-editor/helix";
     yazi.url = "github:sxyazi/yazi";
@@ -22,7 +23,7 @@
     };
   };
 
-  outputs = { self, darwin, nixpkgs, nixpkgs-unstable, home-manager, flake-utils, ... }@inputs:
+  outputs = { self, to-case, darwin, nixpkgs, nixpkgs-unstable, home-manager, flake-utils, ... }@inputs:
     let
       mkNixos = import ./nixos.nix;
       mkDarwin = import ./darwin.nix;
@@ -127,6 +128,7 @@
                 isDarwin = system == "x86_64-darwin";
                 pkgs-clion = import inputs.nixpkgs-clion { inherit system; config.allowUnfree = true; };
                 pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; config.allowUnfree = true; };
+                to-case = to-case.packages.${system}.default;
               };
             }
           ];
