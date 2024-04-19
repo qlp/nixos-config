@@ -77,6 +77,7 @@ with lib;
     gh
     bottom
     neofetch
+    libxml2
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
