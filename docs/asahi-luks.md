@@ -8,7 +8,7 @@ Archived because dotfiles of apple-silicon hosts are merged to https://github.co
 
 ## Why
 
-Great laptops with Linux. If you do `x86_64` development, native is better than cross-compilation.
+Great laptops with Linux. If you do `aarch64` development, native is better than cross-compilation.
 
 ## Basic usage
 

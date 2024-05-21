@@ -3,7 +3,7 @@
 name: { inputs, nixpkgs, home-manager, system, user, darwin }:
 
 darwin.lib.darwinSystem {
-  system = "x86_64-darwin";
+  system = "aarch64-darwin";
 
   # nix-darwin level modules
   modules = [
@@ -55,7 +55,7 @@ darwin.lib.darwinSystem {
       config._module.args = {
         currentSystemName = name;
         currentSystem = system;
-        isDarwin = system == "x86_64-darwin";
+        isDarwin = system == "aarch64-darwin";
         pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; config.allowUnfree = true; };
       };
     }

@@ -31,7 +31,7 @@
     in
     rec
     {
-      packages.x86_64-linux = let pkgs = import nixpkgs { system = "x86_64-linux"; }; in {
+      packages.aarch64-linux = let pkgs = import nixpkgs { system = "aarch64-linux"; }; in {
 
         set-theme = pkgs.writeShellApplication {
           name = "switch-theme";
@@ -45,7 +45,7 @@
             echo "$1"
             cd /home/jurriaan/nixos-config
             printf '%s' "$1" > THEME.txt
-            sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake ".#vm-x86_64-parallels"
+            sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild switch --flake ".#vm-aarch64-parallels"
           '';
         };
         current-task = pkgs.writeShellApplication {
@@ -67,19 +67,19 @@
       };
 
 
-      nixosConfigurations = let system = "x86_64-linux"; in {
-        vm-x86_64-parallels = mkNixos "vm-x86_64-parallels" {
+      nixosConfigurations = let system = "aarch64-linux"; in {
+        vm-aarch64-parallels = mkNixos "vm-aarch64-parallels" {
           inherit user inputs home-manager system;
           nixpkgs = inputs.nixpkgs-parallels;
-          custom-packages = packages.x86_64-linux;
+          custom-packages = packages.aarch64-linux;
         };
 
-        vm-x86_64-utm = mkNixos "vm-x86_64-utm" {
+        vm-aarch64-utm = mkNixos "vm-aarch64-utm" {
           inherit user inputs nixpkgs home-manager system;
-          custom-packages = packages.x86_64-linux;
+          custom-packages = packages.aarch64-linux;
         };
 
-        vm-x86_64-vmware = mkNixos "vm-x86_64-vmware" {
+        vm-aarch64-vmware = mkNixos "vm-aarch64-vmware" {
           inherit user inputs nixpkgs home-manager system;
         };
         vm-orb = nixpkgs.lib.nixosSystem {
@@ -125,7 +125,7 @@
               config._module.args = {
                 currentSystemName = "vm-orb";
                 currentSystem = system;
-                isDarwin = system == "x86_64-darwin";
+                isDarwin = system == "aarch64-darwin";
                 pkgs-clion = import inputs.nixpkgs-clion { inherit system; config.allowUnfree = true; };
                 pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; config.allowUnfree = true; };
                 to-case = to-case.packages.${system}.default;
@@ -135,8 +135,8 @@
         };
       };
 
-      darwinConfigurations = let system = "x86_64-darwin"; in {
-        default = mkDarwin "vm-x86_64-vmware" {
+      darwinConfigurations = let system = "aarch64-darwin"; in {
+        default = mkDarwin "vm-aarch64-vmware" {
           inherit user inputs nixpkgs home-manager system darwin;
         };
       };

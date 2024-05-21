@@ -57,7 +57,7 @@ _NOTE: These instructions are out of date_
 1. Install UTM from the Mac App Store
 2. Download a minimal 64-bit ARM ISO [from the NixOS download page](https://nixos.org/download.html).
 3. Open UTM, Create a new Linux VM, Use Apple Virutalization & Enable Rosetta
-4. Select your `nixos-minimal-...-x86_64-linux.iso`
+4. Select your `nixos-minimal-...-aarch64-linux.iso`
 5. Hardware:
   - CPU: 8 cores
   - RAM: 22528 MB
@@ -72,7 +72,7 @@ _NOTE: These instructions are out of date_
 1. Install [Parallels Desktop](parallels.com).
 2. Download a minimal 64-bit ARM ISO [from the NixOS download page](https://nixos.org/download.html).
 3. In parallels: click "Install Windows or another OS from a DVD or image file"
-4. Select your `nixos-minimal-...-x86_64-linux.iso`
+4. Select your `nixos-minimal-...-aarch64-linux.iso`
 5. Select "Other Linux"
 6. In Name, type "NixOS"
 7. Click "Customize settings before installation"
