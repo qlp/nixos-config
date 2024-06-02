@@ -16,7 +16,7 @@
       scrollback_pager = ''nvim -c "set nonumber nolist showtabline=0 foldcolumn=0 laststatus=0 noshowmode noruler noshowcmd ignorecase smartcase incsearch shortmess+=F" -c "autocmd TermOpen * normal G" -c "map q :qa!<CR>" -c "set clipboard+=unnamedplus" -c "silent write! /tmp/kitty_scrollback_buffer | te echo -n \"$(cat /tmp/kitty_scrollback_buffer)\" && sleep 1000"'';
       macos_option_as_alt = true;
       # tab_bar_min_tabs = 1;
-      tab_title_template = "{title}";
+      tab_title_template = "{title.split(' - ')[0]}";
       # active_tab_title_template = "{title} - {num_windows} {layout_name}";
       # tab_bar_edge = "top";
       # tab_bar_style = "slant";
