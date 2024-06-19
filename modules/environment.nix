@@ -1,10 +1,11 @@
-{ inputs, pkgs, pkgs-clion, lib, currentSystemName, ... }:
+{ inputs, pkgs, pkgs-unstable, pkgs-clion, lib, currentSystemName, ... }:
 {
   environment = {
     systemPackages = with pkgs; [
       git
       git-lfs
       file
+      emacs
       gnumake
       killall
       unzip
@@ -13,6 +14,7 @@
       docker-client
       arc-theme
       nnn
+      ripgrep
       trash-cli
       (writeShellScriptBin "docker-stop-all" ''
         docker stop $(docker ps -q)
@@ -28,7 +30,7 @@
       # You can test if you don't need this by deleting this and seeing
       # if the clipboard sill works.
       gtkmm3
-    ];
+    ] ++ ([ pkgs-unstable.emacs ]);
 
     variables = {
       PS1 = "%m %d $ ";

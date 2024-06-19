@@ -12,7 +12,7 @@
       lfs.enable = true;
       extraConfig = {
         color.ui = true;
-        github.user = "jurriaan";
+        github.user = "qlp";
         gpg.format = "ssh";
         init.defaultBranch = "main";
 
