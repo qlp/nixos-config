@@ -62,14 +62,14 @@ with lib;
   #   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   # };
 
-  fonts.packages = with pkgs; [
-    dejavu_fonts
-    emacs-all-the-icons-fonts
-    jetbrains-mono
-    font-awesome
-    noto-fonts
-    noto-fonts-emoji
-  ];
+  # fonts.packages = with pkgs; [
+  #  dejavu_fonts
+  #  emacs-all-the-icons-fonts
+  #  jetbrains-mono
+  #  font-awesome
+  #  noto-fonts
+  #  noto-fonts-emoji
+  #];
   
   # List packages installed in system profile. To search, run:
   # $ nix search wget

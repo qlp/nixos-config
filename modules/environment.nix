@@ -5,7 +5,7 @@
       git
       git-lfs
       file
-      emacs
+      emacs29
       gnumake
       killall
       unzip

@@ -110,6 +110,7 @@
                     ./home-modules/yazi.nix
                     ./home-modules/nushell/nushell.nix
                     ./home-modules/zoxide.nix
+		    ./home-modules/emacs/spacemacs.nix
                   ];
                 };
 
