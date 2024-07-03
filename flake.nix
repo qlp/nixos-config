@@ -105,6 +105,7 @@
                     ./home-modules/lazygit.nix
                     ./home-modules/git.nix
                     ./home-modules/zellij.nix
+                    ./home-modules/ghostty.nix
                     ./home-modules/direnv.nix
                     ./home-modules/helix.nix
                     ./home-modules/yazi.nix
