@@ -21,9 +21,11 @@
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
-  outputs = { self, to-case, darwin, nixpkgs, nixpkgs-unstable, home-manager, flake-utils, ... }@inputs:
+  outputs = { self, to-case, darwin, nixpkgs, nixpkgs-unstable, home-manager, flake-utils, vscode-server, ... }@inputs:
     let
       mkNixos = import ./nixos.nix;
       mkDarwin = import ./darwin.nix;
@@ -91,6 +93,10 @@
             ./modules/nix.nix
             ./modules/environment.nix
             # ./modules/jetbrains.nix
+            vscode-server.nixosModules.default
+            ({ config, pkgs, ... }: {
+              services.vscode-server.enable = true;
+            })
             home-manager.nixosModules.home-manager
             {
               home-manager = {
@@ -111,7 +117,7 @@
                     ./home-modules/yazi.nix
                     ./home-modules/nushell/nushell.nix
                     ./home-modules/zoxide.nix
-		    ./home-modules/emacs/spacemacs.nix
+		                ./home-modules/emacs/spacemacs.nix
                   ];
                 };
 

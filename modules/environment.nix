@@ -16,6 +16,7 @@
       nnn
       ripgrep
       trash-cli
+      nil
       (writeShellScriptBin "docker-stop-all" ''
         docker stop $(docker ps -q)
         docker system prune -f
