@@ -91,6 +91,7 @@
             ./modules/users.nix
             ./modules/zsh.nix
             ./modules/nix.nix
+            ./modules/1password.nix
             ./modules/environment.nix
             # ./modules/jetbrains.nix
             vscode-server.nixosModules.default
