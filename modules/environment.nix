@@ -17,13 +17,14 @@
       ripgrep
       trash-cli
       nil
+      rsync
       (writeShellScriptBin "docker-stop-all" ''
         docker stop $(docker ps -q)
         docker system prune -f
       '')
       (writeShellScriptBin "docker-prune-all" ''
         docker-stop-all
-        docker rmi -f $(docker images -a -q)    
+        docker rmi -f $(docker images -a -q)
         docker volume prune -f
       '')
     ] ++ lib.optionals (currentSystemName == "vm-aarch64") [
@@ -31,7 +32,10 @@
       # You can test if you don't need this by deleting this and seeing
       # if the clipboard sill works.
       gtkmm3
-    ] ++ ([ pkgs-unstable.emacs ]);
+    ] ++ ([
+      pkgs-unstable.emacs
+      pkgs-unstable.zed-editor
+    ]);
 
     variables = {
       PS1 = "%m %d $ ";

@@ -43,7 +43,7 @@
               echo "Error: Theme must be 'light' or 'dark'"
               exit 1
             fi
-    
+
             echo "$1"
             cd /home/jurriaan/nixos-config
             printf '%s' "$1" > THEME.txt
@@ -117,7 +117,7 @@
                     ./home-modules/yazi.nix
                     ./home-modules/nushell/nushell.nix
                     ./home-modules/zoxide.nix
-		                ./home-modules/emacs/spacemacs.nix
+                    ./home-modules/emacs/spacemacs.nix
                   ];
                 };
 

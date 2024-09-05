@@ -21,12 +21,14 @@ in
   home.file.".hushlogin".text = "";
 
   # programs.ssh doesn't work well for darwin.
+ # Host localhost
+  #    AddKeysToAgent yes
+   #   IdentityFile "~/.orbstack/ssh/id_ed25519"
   home.file.".ssh/config".text = ''
     Host *
       AddKeysToAgent yes
       IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-    Host localhost
-      AddKeysToAgent yes
-      IdentityFile "~/.orbstack/ssh/id_ed25519"
+
+    Include ~/.orbstack/ssh/config
   '';
 }
