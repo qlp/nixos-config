@@ -2,7 +2,7 @@
   description = "NixOS systems and tools by jurriaan";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-23.11";
+    nixpkgs.url = "github:nixos/nixpkgs/release-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-parallels.url = "github:nixos/nixpkgs?rev=b80cef7eb8a9bc5b4f94172ebf4749c8ee3d770c"; # pinned version of 23.05 because parallels can't handle the newer kernel
     nixpkgs-clion.url = "github:qlp/nixpkgs?rev=d8381b3a49fb8fe41b539442918e1ce5433a9b9d"; # patch for remote dev server
@@ -18,7 +18,7 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -106,7 +106,7 @@
                 users.jurriaan = {
                   # Home-manager level modules
                   imports = [
-                    { home.stateVersion = "23.05"; }
+                    { home.stateVersion = "24.05"; }
                     ./home-modules/kitty.nix
                     ./home-modules/zsh.nix
                     ./home-modules/lazygit.nix

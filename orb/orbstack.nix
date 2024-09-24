@@ -59,9 +59,9 @@ with lib;
   '';
 
   # extra certificates
-  security.pki.certificateFiles = [
-    "/opt/orbstack-guest/run/extra-certs.crt"
-  ];
+  # security.pki.certificateFiles = [
+  #   "/opt/orbstack-guest/run/extra-certs.crt"
+  # ];
 
   # indicate builder support for emulated architectures
   nix.extraOptions = "extra-platforms = x86_64-linux i686-linux";
