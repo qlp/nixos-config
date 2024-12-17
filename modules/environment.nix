@@ -5,7 +5,6 @@
       git
       git-lfs
       file
-      emacs29
       gnumake
       killall
       unzip
@@ -33,7 +32,6 @@
       # if the clipboard sill works.
       gtkmm3
     ] ++ ([
-      pkgs-unstable.emacs
       pkgs-unstable.zed-editor
     ]);
 

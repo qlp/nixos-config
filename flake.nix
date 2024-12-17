@@ -23,6 +23,7 @@
     };
 
     vscode-server.url = "github:nix-community/nixos-vscode-server";
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
   };
 
   outputs = { self, to-case, darwin, nixpkgs, nixpkgs-unstable, home-manager, flake-utils, vscode-server, ... }@inputs:
@@ -110,6 +111,7 @@
                     ./home-modules/kitty.nix
                     ./home-modules/zsh.nix
                     ./home-modules/lazygit.nix
+                    ./home-modules/emacs.nix
                     ./home-modules/git.nix
                     ./home-modules/zellij.nix
                     ./home-modules/ghostty.nix
@@ -118,7 +120,6 @@
                     ./home-modules/yazi.nix
                     ./home-modules/nushell/nushell.nix
                     ./home-modules/zoxide.nix
-                    ./home-modules/emacs/spacemacs.nix
                   ];
                 };
 
@@ -136,7 +137,7 @@
                 currentSystem = system;
                 isDarwin = system == "aarch64-darwin";
                 pkgs-clion = import inputs.nixpkgs-clion { inherit system; config.allowUnfree = true; };
-                pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; config.allowUnfree = true; };
+                pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; config.allowUnfree = true; config.allowUnsupportedSystem = true; };
                 to-case = to-case.packages.${system}.default;
               };
             }
