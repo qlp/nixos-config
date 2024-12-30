@@ -1,4 +1,4 @@
-{ config, lib, pkgs-clion, self, ... }:
+{ lib, pkgs-unstable, ... }:
 with lib;
 let
   customizeJetbrains = map (pkg:
@@ -13,6 +13,6 @@ let
 in {
 
   imports = [ ];
-  environment = { systemPackages = with pkgs-clion; customizeJetbrains ([ (jetbrains.clion) ]); };
+  environment = { systemPackages = with pkgs-unstable; customizeJetbrains ([ (jetbrains.rust-rover) ]); };
 
 }

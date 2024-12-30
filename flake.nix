@@ -94,7 +94,7 @@
             ./modules/nix.nix
             ./modules/1password.nix
             ./modules/environment.nix
-            # ./modules/jetbrains.nix
+            ./modules/jetbrains.nix
             vscode-server.nixosModules.default
             ({ config, pkgs, ... }: {
               services.vscode-server.enable = true;
@@ -137,7 +137,8 @@
                 currentSystem = system;
                 isDarwin = system == "aarch64-darwin";
                 pkgs-clion = import inputs.nixpkgs-clion { inherit system; config.allowUnfree = true; };
-                pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; config.allowUnfree = true; config.allowUnsupportedSystem = true; };
+                pkgs-allow-unfree = import inputs.nixpkgs { inherit system; config.allowUnfree = true; };
+                pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; config.allowUnfree = true; };
                 to-case = to-case.packages.${system}.default;
               };
             }
