@@ -17,6 +17,7 @@
       trash-cli
       nil
       rsync
+      rustup
       (writeShellScriptBin "docker-stop-all" ''
         docker stop $(docker ps -q)
         docker system prune -f
@@ -48,9 +49,12 @@
       GDK_DPI_SCALE = "0.5";
       QT_AUTO_SCREEN_SCALE_FACTOR = "1";
       _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
+
+      RUSTUP_HOME = "$HOME/.rustup";
+      CARGO_HOME = "$HOME/.cargo";
     };
 
     # required for zsh autocomplete
-    pathsToLink = [ "/share/zsh" ];
+    pathsToLink = [ "/share/zsh" "/home/$USER/.cargo/bin" ];
   };
 }
