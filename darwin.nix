@@ -8,6 +8,7 @@ darwin.lib.darwinSystem {
   # nix-darwin level modules
   modules = [
     ./modules/nix.nix
+    ./modules/nixd.nix
     ./modules/zsh.nix
     ./modules/darwin.nix
 
@@ -29,7 +30,6 @@ darwin.lib.darwinSystem {
             ./home-modules/git.nix
             ./home-modules/gpg.nix
             ./home-modules/zsh.nix
-            ./home-modules/kitty.nix
             ./home-modules/helix.nix
             ./home-modules/lazygit.nix
             # ./home-modules/wezterm.nix

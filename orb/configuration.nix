@@ -62,15 +62,6 @@ with lib;
   #   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   # };
 
-  # fonts.packages = with pkgs; [
-  #  dejavu_fonts
-  #  emacs-all-the-icons-fonts
-  #  jetbrains-mono
-  #  font-awesome
-  #  noto-fonts
-  #  noto-fonts-emoji
-  #];
-  
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -123,5 +114,4 @@ with lib;
   # As this is intended as a stadalone image, undo some of the minimal profile stuff
   documentation.enable = true;
   documentation.nixos.enable = true;
-  environment.noXlibs = false;
 }

@@ -8,7 +8,7 @@
       gnumake
       killall
       unzip
-      rxvt_unicode
+#      rxvt_unicode
       xclip
       docker-client
       arc-theme
