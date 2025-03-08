@@ -17,7 +17,7 @@
       trash-cli
       nil
       rsync
-      rustup
+#      rustup
       (writeShellScriptBin "docker-stop-all" ''
         docker stop $(docker ps -q)
         docker system prune -f
@@ -50,7 +50,7 @@
       QT_AUTO_SCREEN_SCALE_FACTOR = "1";
       _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
 
-      RUSTUP_HOME = "$HOME/.rustup";
+#      RUSTUP_HOME = "$HOME/.rustup";
       CARGO_HOME = "$HOME/.cargo";
     };
 

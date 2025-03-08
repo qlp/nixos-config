@@ -1,4 +1,4 @@
-{ lib, pkgs-unstable, ... }:
+{ lib, pkgs-jetbrains, ... }:
 with lib;
 let
   customizeJetbrains = map (pkg:
@@ -13,6 +13,6 @@ let
 in {
 
   imports = [ ];
-  environment = { systemPackages = with pkgs-unstable; customizeJetbrains ([ (jetbrains.rust-rover) ]); };
+  environment = { systemPackages = with pkgs-jetbrains; customizeJetbrains ([ (jetbrains.rust-rover) ]); };
 
 }

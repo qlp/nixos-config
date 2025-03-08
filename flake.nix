@@ -137,6 +137,7 @@
                 pkgs-clion = import inputs.nixpkgs-clion { inherit system; config.allowUnfree = true; };
                 pkgs-allow-unfree = import inputs.nixpkgs { inherit system; config.allowUnfree = true; };
                 pkgs-unstable = import inputs.nixpkgs-unstable { inherit system; config.allowUnfree = true; };
+                pkgs-jetbrains = import inputs.nixpkgs { inherit system; config.allowUnfree = true; };
                 to-case = to-case.packages.${system}.default;
               };
             }
