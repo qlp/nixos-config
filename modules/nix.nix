@@ -1,7 +1,7 @@
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 {
   nix = {
-    package = pkgs-unstable.nix;
+    package = pkgs.nixVersions.nix_2_25;
     settings = {
       sandbox = "relaxed";
       substituters = [
