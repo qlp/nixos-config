@@ -34,6 +34,7 @@
       gtkmm3
     ] ++ ([
       pkgs-unstable.zed-editor
+      pkgs-unstable.claude-code
     ]);
 
     variables = {
