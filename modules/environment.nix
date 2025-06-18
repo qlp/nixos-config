@@ -17,6 +17,7 @@
       trash-cli
       nil
       rsync
+      natscli
 #      rustup
       (writeShellScriptBin "docker-stop-all" ''
         docker stop $(docker ps -q)
